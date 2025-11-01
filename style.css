@@ -708,7 +708,8 @@ section#events-text {
   transform: rotate(0.25turn);
 }
 
-.events-text__content--title {
+.events-text__content--title,
+.gallery-text__content--title {
   font-size: var(--font-size-title);
   font-weight: 500;
   color: white;
@@ -716,8 +717,17 @@ section#events-text {
 }
 
 section#gallery-text {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   grid-column: center-start / col-end 1;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+}
+
+.gallery-text__content {
+  transform: rotate(-0.25turn);
 }
 
 section#gallery-carousel {
@@ -797,12 +807,19 @@ footer#footer {
     grid-template-rows: repeat(2, max-content);
   }
 
-  section#events-text {
+  section#events-text,
+  section#gallery-text,
+  section#features-text {
     display: none;
   }
 
   section#events-content {
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+
+  section#gallery-carousel,
+  section#events-content,
+  section#features-content {
     grid-column: center-start / center-end;
   }
 
@@ -816,7 +833,8 @@ footer#footer {
   .booking-content__para,
   div[class^="villas"] p[class^="villas"],
   .motto__content--para,
-  section#events-content > div p[class*="para"] {
+  section#events-content > div p[class*="para"],
+  section#features-content > div p[class*="para"] {
     font-size: 1.5rem;
   }
 
@@ -825,7 +843,9 @@ footer#footer {
   }
 
   section#events-content > div:first-child,
-  section#events-content > div:last-child {
+  section#events-content > div:last-child,
+  section#features-content > div:first-child,
+  section#features-content > div:last-child {
     border: none;
   }
 }
