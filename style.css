@@ -695,8 +695,24 @@ section#events-content > div:last-child {
 }
 
 section#events-text {
-  background-color: var(--color-primary);
+  background-color: var(--color-tertiary);
   grid-column: col-start 10 / center-end;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+}
+
+.events-text__content {
+  transform: rotate(0.25turn);
+}
+
+.events-text__content--title {
+  font-size: var(--font-size-title);
+  font-weight: 500;
+  color: white;
+  letter-spacing: 0.2rem;
 }
 
 section#gallery-text {
